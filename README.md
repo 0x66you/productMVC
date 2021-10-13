@@ -9,6 +9,6 @@
 * view.py - handles everything on user's screen
 * dao.py - stores and retrieves data in SQLite
 * controller.py - combines module method into bundles
-* project.uxf - diagram
+* project.uxf - uml diagram
 ## License
 [MIT License](https://oss.ninja/mit/0x66you) © Yeh,Chun-Chen

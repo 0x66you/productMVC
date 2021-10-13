@@ -1,0 +1,97 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>220</x><y>200</y><w>150</w><h>170</h></coordinates><panel_attributes>setup.py
+-
+CREATE TABLE product 
+(
+    id INTEGER,
+    name TEXT,
+    price REAL,
+    quantity INTEGER,
+    date TEXT,
+    PRIMARY KEY('id')
+)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>570</y><w>360</w><h>140</h></coordinates><panel_attributes>toydata.py
+-
+INSERT INTO product (id, name, price, quantity, date) 
+VALUES 
+    (1, 'Elite Series 2 Controller - Black', 148.49, 38, '2018-12-31'),
+    (2, 'Nintendo Switch -HAC-001', 264.99, 209, '2019-08-29'),
+    (3, 'Razer BlackShark V2 Headset', 99.99, 200, '2020-07-30'),
+    (4, 'Kingston 240GB A400 SATA 3', 27.99, 14, '2018-07-01'),
+    (5, 'Garmin Forerunner 235', 169.99, 85, '2015-10-21');</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>420</y><w>150</w><h>90</h></coordinates><panel_attributes>main.py
+-
+
+ctrl = Controller()
+ctrl.run_menu()</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>360</y><w>30</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>280</x><y>500</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>360</x><y>450</y><w>110</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>90;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>450</x><y>300</y><w>150</w><h>230</h></coordinates><panel_attributes>controller.py
+Controller
+-
+__iv  
+__ov
+__mv
+__p
+__dao
+-
+execute( )
+search_alldb( )
+search_id_db( )
+delete_alldb( )
+delete_id_db( )
+update_id_db( )
+run_menu( )</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>490</x><y>40</y><w>170</w><h>200</h></coordinates><panel_attributes>dao.py
+Dao
+-
+conn
+c
+-
+connect_db( )
+disconnect_db( )
+add_data( product: Product )
+search_all( )
+search_id( id_:int )
+delete_all( )
+delete_id( id_:int )
+update_id( data:tuple )</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>700</x><y>40</y><w>160</w><h>230</h></coordinates><panel_attributes>model.py
+Product
+-
+id_
+name_
+price_
+quantity_
+date_
+-
+set_product( 
+    id_ : int,
+    name_ : str,
+    price_ : float,
+    quantity_ : int,
+    date_ : str
+)</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>220</x><y>40</y><w>220</w><h>140</h></coordinates><panel_attributes>view.py
+InputView
+-
+
+-
+enter_info( )
+enter_id_search( )
+enter_delete_alldb( )
+enter_delete_id( )
+enter_update_id( )</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>540</x><y>230</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element><element><id>Relation</id><coordinates><x>650</x><y>140</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>250</y><w>130</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>110;10;70;10;70;60;10;60</additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>330</y><w>220</w><h>160</h></coordinates><panel_attributes>view.py
+OutputView
+-
+
+-
+show_all( product_list: list )
+show_id_search( product_list: list )
+show_delete_alldb( confirm_: bool)
+show_cancel_delete( )
+show_delete_id( confirm_: bool )
+show_update_id( confirm_: bool)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>400</x><y>170</y><w>70</w><h>180</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;160;10;160;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>590</x><y>430</y><w>70</w><h>30</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>50;10;10;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>640</x><y>520</y><w>220</w><h>190</h></coordinates><panel_attributes>view.py
+OutputView
+-
+choice = None
+choose_execute = 1
+choose_search_alldb = 2
+choose_search_id = 3
+choose_delete_alldb = 4
+choose_delete_id = 5
+choose_update_id = 6
+choose_end = 9
+-
+nav( )</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>580</x><y>520</y><w>80</w><h>80</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>60;60;10;60;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>800</x><y>260</y><w>30</w><h>90</h></coordinates><panel_attributes>lt=&lt;-</panel_attributes><additional_attributes>10;10;10;70</additional_attributes></element></diagram>
